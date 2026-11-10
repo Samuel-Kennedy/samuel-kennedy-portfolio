@@ -1,0 +1,276 @@
+<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="icon-grid" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="7" height="7" rx="1.5" />
+    <rect x="14" y="3" width="7" height="7" rx="1.5" />
+    <rect x="14" y="14" width="7" height="7" rx="1.5" />
+    <rect x="3" y="14" width="7" height="7" rx="1.5" />
+  </symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="10" cy="7" r="4" />
+    <path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+  </symbol>
+  <symbol id="icon-briefcase" viewBox="0 0 24 24">
+    <rect x="3" y="7" width="18" height="14" rx="2" />
+    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2" />
+  </symbol>
+  <symbol id="icon-chart" viewBox="0 0 24 24">
+    <path d="M3 3v18h18M18 17V9m-5 8V5m-5 12v-4" />
+  </symbol>
+  <symbol id="icon-settings" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="3" />
+    <path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.7a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.7-1.4-2.4 1.4-1.1A8 8 0 0 1 7 13l-1.8-.3V9.9L7 9.6a8 8 0 0 1 .8-1.7L6.4 6.5l1.4-2.4 1.7.7a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.7 1.4 2.4-1.4 1.4a8 8 0 0 1 .8 1.7l1.8.3v2.8l-1.8.3a8 8 0 0 1-.7 2Z" />
+  </symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7" />
+    <path d="m20 20-4-4" />
+  </symbol>
+  <symbol id="icon-bell" viewBox="0 0 24 24">
+    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 12a2 2 0 0 0 4 0" />
+  </symbol>
+  <symbol id="icon-chevron" viewBox="0 0 24 24">
+    <path d="m7 10 5 5 5-5" />
+  </symbol>
+  <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+    <path d="m7 14 5-5 5 5M12 9v10" />
+  </symbol>
+  <symbol id="icon-arrow-down" viewBox="0 0 24 24">
+    <path d="m7 10 5 5 5-5M12 5v10" />
+  </symbol>
+  <symbol id="icon-plus" viewBox="0 0 24 24">
+    <path d="M12 5v14m-7-7h14" />
+  </symbol>
+  <symbol id="icon-download" viewBox="0 0 24 24">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5 5 5 5-5m-5 5V3" />
+  </symbol>
+  <symbol id="icon-more" viewBox="0 0 24 24">
+    <circle cx="5" cy="12" r="1" />
+    <circle cx="12" cy="12" r="1" />
+    <circle cx="19" cy="12" r="1" />
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24">
+    <path d="m18 6-12 12M6 6l12 12" />
+  </symbol>
+</svg>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="Nexus Business, início">
+      <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
+      <span class="brand-name">nexus<span>business</span></span>
+    </a>
+
+    <div class="workspace-switcher">
+      <span class="workspace-avatar">N</span>
+      <span class="workspace-copy"><strong>Nexus Studio</strong><small>Plano profissional</small></span>
+      <svg class="icon"><use href="#icon-chevron" /></svg>
+    </div>
+
+    <span class="nav-caption">MENU PRINCIPAL</span>
+    <nav class="main-nav" aria-label="Menu principal">
+      <a href="#overview" [class.active]="activeSection() === 'overview'" (click)="setActiveSection('overview')">
+        <svg class="icon"><use href="#icon-grid" /></svg><span>Visão geral</span>
+      </a>
+      <a href="#clients" [class.active]="activeSection() === 'clients'" (click)="setActiveSection('clients')">
+        <svg class="icon"><use href="#icon-users" /></svg><span>Clientes</span><span class="nav-count">{{ clients().length }}</span>
+      </a>
+      <a href="#projects" [class.active]="activeSection() === 'projects'" (click)="setActiveSection('projects')">
+        <svg class="icon"><use href="#icon-briefcase" /></svg><span>Projetos</span>
+      </a>
+      <a href="#reports" [class.active]="activeSection() === 'reports'" (click)="setActiveSection('reports')">
+        <svg class="icon"><use href="#icon-chart" /></svg><span>Relatórios</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="upgrade-card">
+        <span class="upgrade-icon">✦</span>
+        <strong>Faça mais com o Nexus</strong>
+        <p>Tenha uma visão completa do seu negócio em um só lugar.</p>
+        <button type="button" (click)="showToast('Você já está conhecendo o Nexus Business!')">Conhecer recursos <span>→</span></button>
+      </div>
+      <a class="settings-link" href="#settings" (click)="showToast('Configurações disponíveis em breve.')">
+        <svg class="icon"><use href="#icon-settings" /></svg><span>Configurações</span>
+      </a>
+      <div class="profile-card">
+        <span class="profile-avatar">SK</span>
+        <span class="profile-copy"><strong>Samuel Kennedy</strong><small>Administrador</small></span>
+        <button class="icon-button profile-menu" type="button" aria-label="Mais opções do perfil" (click)="showToast('Perfil de demonstração.')">
+          <svg class="icon"><use href="#icon-more" /></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content" id="overview">
+    <header class="topbar">
+      <div class="breadcrumb"><a class="portfolio-return" routerLink="/">← Portfólio</a><span class="breadcrumb-divider">/</span><strong>{{ pageTitle() }}</strong></div>
+      <div class="topbar-actions">
+        <label class="search-box">
+          <svg class="icon"><use href="#icon-search" /></svg>
+          <input type="search" placeholder="Buscar clientes..." aria-label="Buscar clientes" [value]="searchQuery()" (input)="updateSearch($event)" />
+          <kbd>⌘ K</kbd>
+        </label>
+        <button class="icon-button notification-button" type="button" aria-label="Notificações" (click)="showToast('Você está em dia. Nenhuma notificação nova.')">
+          <svg class="icon"><use href="#icon-bell" /></svg><span class="notification-dot"></span>
+        </button>
+        <span class="topbar-avatar" aria-label="Samuel Kennedy">SK</span>
+      </div>
+    </header>
+
+    <div class="page-container">
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">{{ todayLabel }}</p>
+          <h1>Visão geral <span class="wave">✦</span></h1>
+          <p class="heading-subtitle">Acompanhe o que está acontecendo no seu negócio.</p>
+        </div>
+        <div class="heading-actions">
+          <button class="button button-secondary" type="button" (click)="exportClients()">
+            <svg class="icon"><use href="#icon-download" /></svg> Exportar
+          </button>
+          <button class="button button-primary" type="button" (click)="openClientForm()">
+            <svg class="icon"><use href="#icon-plus" /></svg> Novo cliente
+          </button>
+        </div>
+      </section>
+
+      <section class="metrics-grid" aria-label="Indicadores do negócio">
+        <article class="metric-card">
+          <div class="metric-top"><span>Receita total</span><span class="metric-icon revenue-icon">R$</span></div>
+          <strong class="metric-value">R$ 48.290<span>,00</span></strong>
+          <div class="metric-foot"><span class="trend positive"><svg class="icon"><use href="#icon-arrow-up" /></svg> 12,8%</span><span>vs. mês passado</span></div>
+          <span class="metric-sparkline sparkline-purple" aria-hidden="true"></span>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span>Clientes ativos</span><span class="metric-icon clients-icon"><svg class="icon"><use href="#icon-users" /></svg></span></div>
+          <strong class="metric-value">{{ activeClientCount() }}<span class="metric-unit"> clientes</span></strong>
+          <div class="metric-foot"><span class="trend positive"><svg class="icon"><use href="#icon-arrow-up" /></svg> 8,2%</span><span>vs. mês passado</span></div>
+          <span class="metric-sparkline sparkline-green" aria-hidden="true"></span>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span>Projetos em andamento</span><span class="metric-icon projects-icon"><svg class="icon"><use href="#icon-briefcase" /></svg></span></div>
+          <strong class="metric-value">12<span class="metric-unit"> projetos</span></strong>
+          <div class="metric-foot"><span class="trend positive"><svg class="icon"><use href="#icon-arrow-up" /></svg> 2 novos</span><span>nesta semana</span></div>
+          <span class="metric-sparkline sparkline-orange" aria-hidden="true"></span>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span>Taxa de conversão</span><span class="metric-icon conversion-icon"><svg class="icon"><use href="#icon-chart" /></svg></span></div>
+          <strong class="metric-value">68<span class="metric-unit">,4%</span></strong>
+          <div class="metric-foot"><span class="trend negative"><svg class="icon"><use href="#icon-arrow-down" /></svg> 1,4%</span><span>vs. mês passado</span></div>
+          <span class="metric-sparkline sparkline-blue" aria-hidden="true"></span>
+        </article>
+      </section>
+
+      <section class="middle-grid">
+        <article class="panel revenue-panel" id="reports">
+          <div class="panel-heading">
+            <div><h2>Visão financeira</h2><p>Receitas e despesas ao longo do tempo</p></div>
+            <label class="select-wrap">
+              <span class="visually-hidden">Período do gráfico</span>
+              <select [value]="selectedPeriod()" (change)="changePeriod($event)">
+                <option value="7d">Últimos 7 dias</option>
+                <option value="30d">Últimos 30 dias</option>
+                <option value="90d">Últimos 90 dias</option>
+              </select>
+              <svg class="icon"><use href="#icon-chevron" /></svg>
+            </label>
+          </div>
+          <div class="chart-legend"><span><i class="legend-dot income-dot"></i>Receitas</span><span><i class="legend-dot expense-dot"></i>Despesas</span></div>
+          <div class="chart-area">
+            <div class="chart-y-labels"><span>R$ 15k</span><span>R$ 10k</span><span>R$ 5k</span><span>R$ 0</span></div>
+            <div class="chart-plot">
+              <div class="chart-grid"><span></span><span></span><span></span><span></span></div>
+              <svg class="chart-svg" viewBox="0 0 700 190" preserveAspectRatio="none" role="img" [attr.aria-label]="'Gráfico de receitas e despesas: ' + periodLabel()">
+                <defs>
+                  <linearGradient id="income-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#6558e8" stop-opacity=".2" /><stop offset="100%" stop-color="#6558e8" stop-opacity="0" /></linearGradient>
+                  <linearGradient id="expense-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#24bca1" stop-opacity=".12" /><stop offset="100%" stop-color="#24bca1" stop-opacity="0" /></linearGradient>
+                </defs>
+                <polygon [attr.points]="chartAreaPoints(incomePoints())" fill="url(#income-fill)" />
+                <polygon [attr.points]="chartAreaPoints(expensePoints())" fill="url(#expense-fill)" />
+                <polyline [attr.points]="incomePoints()" fill="none" stroke="#6558e8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+                <polyline [attr.points]="expensePoints()" fill="none" stroke="#24bca1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+                @for (point of incomePointList(); track $index) {
+                  <circle [attr.cx]="point.x" [attr.cy]="point.y" r="3.5" fill="#fff" stroke="#6558e8" stroke-width="2" vector-effect="non-scaling-stroke" />
+                }
+              </svg>
+              <div class="chart-x-labels">
+                @for (label of chartLabels(); track label) { <span>{{ label }}</span> }
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel activity-panel" id="projects">
+          <div class="panel-heading"><div><h2>Resumo de atividades</h2><p>Distribuição do seu trabalho</p></div><button class="icon-button" type="button" aria-label="Mais opções" (click)="showToast('Resumo atualizado agora.')"><svg class="icon"><use href="#icon-more" /></svg></button></div>
+          <div class="activity-chart-wrap">
+            <div class="donut-chart"><div class="donut-center"><strong>24</strong><span>no total</span></div></div>
+            <div class="donut-label"><span class="legend-dot activity-purple"></span><strong>12</strong><small>Em andamento</small></div>
+            <div class="donut-label"><span class="legend-dot activity-green"></span><strong>8</strong><small>Concluídos</small></div>
+            <div class="donut-label"><span class="legend-dot activity-orange"></span><strong>4</strong><small>A iniciar</small></div>
+          </div>
+          <div class="activity-footer"><span>Meta mensal</span><strong>72% <small>concluída</small></strong></div>
+          <div class="progress-track"><span></span></div>
+          <p class="activity-note">Você está no caminho certo. Continue assim!</p>
+        </article>
+      </section>
+
+      <section class="panel clients-panel" id="clients">
+        <div class="panel-heading clients-heading">
+          <div><h2>Seus clientes</h2><p>Gerencie seus relacionamentos em um só lugar.</p></div>
+          <div class="client-controls">
+            <label class="client-search"><svg class="icon"><use href="#icon-search" /></svg><input type="search" placeholder="Filtrar clientes" aria-label="Filtrar clientes" [value]="searchQuery()" (input)="updateSearch($event)" /></label>
+            <label class="select-wrap status-select">
+              <span class="visually-hidden">Filtrar por status</span>
+              <select [value]="statusFilter()" (change)="changeStatusFilter($event)">
+                <option value="Todos">Todos os status</option>
+                <option value="Ativo">Ativos</option>
+                <option value="Pendente">Pendentes</option>
+              </select>
+              <svg class="icon"><use href="#icon-chevron" /></svg>
+            </label>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>CLIENTE</th><th>CATEGORIA</th><th>PROJETOS</th><th>VALOR TOTAL</th><th>STATUS</th><th><span class="visually-hidden">Ações</span></th></tr></thead>
+            <tbody>
+              @for (client of filteredClients(); track client.email) {
+                <tr>
+                  <td><div class="client-cell"><span class="client-avatar" [class]="'client-avatar ' + client.color">{{ client.initials }}</span><span><strong>{{ client.name }}</strong><small>{{ client.email }}</small></span></div></td>
+                  <td>{{ client.category }}</td><td>{{ client.projects }} projeto{{ client.projects === 1 ? '' : 's' }}</td>
+                  <td class="amount-cell">R$ {{ client.total }}</td>
+                  <td><span class="status-pill" [class.status-active]="client.status === 'Ativo'" [class.status-pending]="client.status === 'Pendente'"><i></i>{{ client.status }}</span></td>
+                  <td><button class="icon-button row-menu" type="button" [attr.aria-label]="'Mais opções para ' + client.name" (click)="showToast('Cliente: ' + client.name)"><svg class="icon"><use href="#icon-more" /></svg></button></td>
+                </tr>
+              } @empty {
+                <tr><td class="empty-state" colspan="6">Nenhum cliente encontrado. Tente outra busca ou adicione um novo cliente.</td></tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        <div class="table-footer"><span>Exibindo <strong>{{ filteredClients().length }}</strong> de <strong>{{ clients().length }}</strong> clientes</span><button type="button" class="view-all-link" (click)="clearClientFilters()">Limpar filtros <span>→</span></button></div>
+      </section>
+
+      <footer class="page-footer"><span>Nexus Business <b>·</b> Projeto demonstrativo</span><span>Dados fictícios para demonstração</span></footer>
+    </div>
+  </main>
+</div>
+
+@if (isClientFormOpen()) {
+  <div class="modal-backdrop" (click)="closeClientForm()">
+    <section class="client-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" (click)="$event.stopPropagation()">
+      <div class="modal-heading"><div><span class="modal-kicker">NOVO REGISTRO</span><h2 id="modal-title">Adicionar cliente</h2><p>Preencha os dados para incluir na sua carteira.</p></div><button class="icon-button" type="button" aria-label="Fechar" (click)="closeClientForm()"><svg class="icon"><use href="#icon-close" /></svg></button></div>
+      <form (submit)="addClient($event)">
+        <label>Nome do cliente<input name="name" required placeholder="Ex.: Acme Studio" [value]="newClientName()" (input)="updateNewClientName($event)" /></label>
+        <label>E-mail de contato<input name="email" type="email" required placeholder="contato@empresa.com" [value]="newClientEmail()" (input)="updateNewClientEmail($event)" /></label>
+        @if (formError()) { <p class="form-error" role="alert">{{ formError() }}</p> }
+        <div class="modal-actions"><button class="button button-secondary" type="button" (click)="closeClientForm()">Cancelar</button><button class="button button-primary" type="submit">Adicionar cliente</button></div>
+      </form>
+    </section>
+  </div>
+}
+
+@if (toastMessage()) {
+  <div class="toast-message" role="status">{{ toastMessage() }}</div>
+}
